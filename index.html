@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>생명을 켜는 30초 · 생존 가이드</title>
+<style>
+  :root{--red:#d8232a;--red-d:#a4151b;--ink:#16181d;--card:#fff;--muted:#6b7280;--line:#e6e8ec;--safe:#0a7d3b;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{margin:0;font-family:'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',system-ui,sans-serif;background:#0e0f12;color:var(--ink);-webkit-text-size-adjust:100%;}
+  .wrap{max-width:480px;margin:0 auto;min-height:100vh;background:#f4f5f7;}
+  header{background:linear-gradient(135deg,var(--red),var(--red-d));color:#fff;padding:18px 18px 16px;position:sticky;top:0;z-index:10;box-shadow:0 4px 14px rgba(0,0,0,.18);}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:21px;letter-spacing:-.4px;}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:#ffd23f;box-shadow:0 0 0 4px rgba(255,210,63,.28);animation:pulse 1.1s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,210,63,.5)}100%{box-shadow:0 0 0 9px rgba(255,210,63,0)}}
+  .tagline{font-size:12.5px;opacity:.92;margin-top:5px;font-weight:500;}
+  .langbar{display:flex;gap:6px;margin-top:13px;}
+  .langbar button{flex:1;border:0;padding:8px 0;border-radius:9px;font-weight:700;font-size:13px;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;}
+  .langbar button.on{background:#fff;color:var(--red-d);}
+  .lead{padding:15px 18px 4px;font-size:13.5px;color:#374151;font-weight:600;}
+  .steps{padding:8px 14px 4px;}
+  .step{background:var(--card);border-radius:16px;padding:15px 15px 14px;margin:11px 0;box-shadow:0 2px 8px rgba(16,24,40,.06);border:1px solid var(--line);display:flex;gap:13px;align-items:flex-start;}
+  .num{flex:0 0 auto;width:38px;height:38px;border-radius:11px;background:var(--red);color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;}
+  .step.safe .num{background:var(--safe);}
+  .st-t{font-size:17px;font-weight:800;letter-spacing:-.3px;}
+  .st-d{font-size:13.5px;color:#4b5563;margin-top:3px;line-height:1.5;}
+  .calls{padding:6px 14px 4px;}
+  .calls h3{font-size:13px;color:var(--muted);margin:14px 6px 8px;font-weight:700;}
+  a.call{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;border-radius:14px;padding:15px 16px;margin:9px 0;font-weight:800;font-size:18px;box-shadow:0 3px 10px rgba(0,0,0,.12);}
+  a.call .ic{font-size:21px;}
+  a.call .sub{font-size:11.5px;font-weight:600;opacity:.9;display:block;margin-top:1px;}
+  .c112{background:#1b54c4;}.c119{background:#d8232a;}.road{background:#1f2937;}
+  footer{padding:16px 18px 30px;color:#9aa1ab;font-size:11px;text-align:center;line-height:1.6;}
+  .pin{font-size:11px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="dot"></span><span data-k="brand">생명을 켜는 30초</span></div>
+    <div class="tagline" data-k="tag">멈춘 순간을 구하는 30초 · 광양경찰서 교통과</div>
+    <div class="langbar">
+      <button data-lang="ko" class="on" onclick="setLang('ko')">한국어</button>
+      <button data-lang="en" onclick="setLang('en')">ENG</button>
+      <button data-lang="vi" onclick="setLang('vi')">Tiếng Việt</button>
+    </div>
+  </header>
+  <div class="lead" data-k="lead">사고·고장으로 차가 멈췄나요? 아래 순서대로 따라하세요.</div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><div class="st-t" data-k="s1t">비상등 켜기</div><div class="st-d" data-k="s1d">즉시 비상등을 켜 뒤차에 위험을 알립니다.</div></div></div>
+    <div class="step"><div class="num">2</div><div><div class="st-t" data-k="s2t">트렁크 열기</div><div class="st-d" data-k="s2d">트렁크를 열어 후방 시인성을 높입니다.</div></div></div>
+    <div class="step safe"><div class="num">3</div><div><div class="st-t" data-k="s3t">가드레일 밖으로 대피</div><div class="st-d" data-k="s3d">차 안·도로 위에 머물지 마세요. 가드레일 바깥 안전한 곳으로 즉시 대피합니다.</div></div></div>
+    <div class="step"><div class="num">4</div><div><div class="st-t" data-k="s4t">안전한 곳에서 신고</div><div class="st-d" data-k="s4d">대피한 뒤 아래 버튼으로 신고하세요.</div></div></div>
+  </div>
+  <div class="calls">
+    <h3 data-k="callh">한 번 눌러 바로 신고</h3>
+    <a class="call c112" href="tel:112"><span class="ic">🚓</span><span><span data-k="c112">경찰 112</span><span class="sub" data-k="c112s">교통사고·위험 신고</span></span></a>
+    <a class="call c119" href="tel:119"><span class="ic">🚑</span><span><span data-k="c119">소방·구급 119</span><span class="sub" data-k="c119s">부상자·화재</span></span></a>
+    <a class="call road" href="tel:15882504"><span class="ic">🛣️</span><span><span data-k="road">한국도로공사 1588-2504</span><span class="sub" data-k="roads">고속도로 사고·고장</span></span></a>
+  </div>
+  <footer>
+    <div class="pin" data-k="foot">⚠️ 절대 도로 위에 서 있거나 손을 흔들지 마세요. 2차 사고 치사율은 일반 사고의 약 6.5배입니다.</div>
+    <div style="margin-top:8px;">광양경찰서 교통과 · 생명을 켜는 30초</div>
+  </footer>
+</div>
+<script>
+const T = {
+  ko:{brand:"생명을 켜는 30초", tag:"멈춘 순간을 구하는 30초 · 광양경찰서 교통과",
+    lead:"사고·고장으로 차가 멈췄나요? 아래 순서대로 따라하세요.",
+    s1t:"비상등 켜기", s1d:"즉시 비상등을 켜 뒤차에 위험을 알립니다.",
+    s2t:"트렁크 열기", s2d:"트렁크를 열어 후방 시인성을 높입니다.",
+    s3t:"가드레일 밖으로 대피", s3d:"차 안·도로 위에 머물지 마세요. 가드레일 바깥 안전한 곳으로 즉시 대피합니다.",
+    s4t:"안전한 곳에서 신고", s4d:"대피한 뒤 아래 버튼으로 신고하세요.",
+    callh:"한 번 눌러 바로 신고", c112:"경찰 112", c112s:"교통사고·위험 신고",
+    c119:"소방·구급 119", c119s:"부상자·화재", road:"한국도로공사 1588-2504", roads:"고속도로 사고·고장",
+    foot:"⚠️ 절대 도로 위에 서 있거나 손을 흔들지 마세요. 2차 사고 치사율은 일반 사고의 약 6.5배입니다."},
+  en:{brand:"Golden Time · 30s", tag:"30 seconds that save lives · Gwangyang Police",
+    lead:"Stopped after a crash or breakdown? Follow these steps.",
+    s1t:"Turn on hazard lights", s1d:"Immediately switch on hazard lights to warn vehicles behind.",
+    s2t:"Open the trunk", s2d:"Open the trunk to increase rear visibility.",
+    s3t:"Move beyond the guardrail", s3d:"Do NOT stay in the car or on the road. Move to a safe place outside the guardrail at once.",
+    s4t:"Call from a safe spot", s4d:"After moving to safety, call using the buttons below.",
+    callh:"Tap once to call", c112:"Police 112", c112s:"Crash / hazard",
+    c119:"Fire · Ambulance 119", c119s:"Injuries / fire", road:"Expressway Corp. 1588-2504", roads:"Highway crash / breakdown",
+    foot:"⚠️ Never stand on the road or wave your arms. Secondary-crash fatality is about 6.5× higher."},
+  vi:{brand:"Golden Time · 30s", tag:"30 giây cứu mạng sống · Cảnh sát Gwangyang",
+    lead:"Xe dừng do tai nạn hoặc hỏng? Làm theo các bước sau.",
+    s1t:"Bật đèn khẩn cấp", s1d:"Bật ngay đèn khẩn cấp để cảnh báo xe phía sau.",
+    s2t:"Mở cốp xe", s2d:"Mở cốp xe để tăng khả năng nhận biết từ phía sau.",
+    s3t:"Di chuyển ra ngoài hộ lan", s3d:"KHÔNG ở trong xe hay trên đường. Di chuyển ngay ra nơi an toàn ngoài hộ lan.",
+    s4t:"Gọi từ nơi an toàn", s4d:"Sau khi đến nơi an toàn, gọi bằng các nút bên dưới.",
+    callh:"Chạm một lần để gọi", c112:"Cảnh sát 112", c112s:"Tai nạn / nguy hiểm",
+    c119:"Cứu hỏa · Cấp cứu 119", c119s:"Bị thương / cháy", road:"Đường cao tốc 1588-2504", roads:"Tai nạn / hỏng xe",
+    foot:"⚠️ Tuyệt đối không đứng trên đường hay vẫy tay. Tỷ lệ tử vong do va chạm thứ cấp cao gấp ~6,5 lần."}
+};
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-k]').forEach(e=>{ if(T[l][e.dataset.k]!==undefined) e.textContent=T[l][e.dataset.k]; });
+  document.querySelectorAll('.langbar button').forEach(b=>b.classList.toggle('on', b.dataset.lang===l));
+}
+</script>
+</body>
+</html>
